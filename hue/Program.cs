@@ -10,9 +10,12 @@ namespace hue
     {
         static async Task Main(string[] args)
         {
-            Options options = new Options();
+            Options options = null;
             Parser.Default.ParseArguments<Options>(args)
                 .WithParsed<Options>(o => options = o);
+
+            if (options == null)
+                return;
 
             try
             {
@@ -48,7 +51,7 @@ namespace hue
 
         static void Wait(Options o)
         {
-            if(o.Wait == true)
+            if(o.Wait)
             {
                 Console.WriteLine();
                 Console.WriteLine("Press ENTER to Exit.", Color.Yellow);

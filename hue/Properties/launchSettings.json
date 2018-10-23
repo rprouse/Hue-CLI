@@ -2,7 +2,7 @@
   "profiles": {
     "hue": {
       "commandName": "Project",
-      "commandLineArgs": "-w --lights"
+      "commandLineArgs": "-w --help"
     }
   }
 }
