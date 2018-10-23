@@ -100,7 +100,7 @@ namespace hue
             var lights = await _client.GetLightsAsync();
             foreach (var light in lights)
             {
-                Console.WriteLine($"{light.Id} - {light.Name} ({(light.State.On ? "On" : "Off")})", Color.Gray);
+                Console.WriteLine($"{light.Id} - {light.Name} ({(light.State.On ? $"On {(light.State.Brightness * 100 / 255)}%" : "Off")})", Color.Gray);
             }
         }
     }
