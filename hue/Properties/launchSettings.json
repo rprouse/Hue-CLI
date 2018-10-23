@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "hue": {
+      "commandName": "Project",
+      "commandLineArgs": "-w --lights"
+    }
+  }
+}
