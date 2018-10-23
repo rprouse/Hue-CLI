@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hue", "hue\hue.csproj", "{924C2771-CD63-4E5E-99CB-FCD0213DDFDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{924C2771-CD63-4E5E-99CB-FCD0213DDFDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{924C2771-CD63-4E5E-99CB-FCD0213DDFDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{924C2771-CD63-4E5E-99CB-FCD0213DDFDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{924C2771-CD63-4E5E-99CB-FCD0213DDFDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7754CCC6-1284-49FC-A894-71AA75B800E3}
+	EndGlobalSection
+EndGlobal
