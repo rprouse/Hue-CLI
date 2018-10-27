@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Q42.HueApi;
 using Q42.HueApi.Interfaces;
 using Q42.HueApi.Models.Bridge;
-
+using Q42.HueApi.Models.Groups;
 using Console = Colorful.Console;
 
 namespace hue
@@ -103,5 +103,32 @@ namespace hue
                 Console.WriteLine($"{light.Id} - {light.Name} ({(light.State.On ? $"On {(light.State.Brightness * 100 / 255)}%" : "Off")})", Color.Gray);
             }
         }
+
+        public LightCommand GetCommand(Options options)
+        {
+            var command = new LightCommand();
+            if (options.On)
+                command.On = true;
+            else if (options.Off)
+                command.On = false;
+
+            if (options.Alert)
+            {
+                command.Alert = Alert.Multiple;
+            }
+
+            return command;
+        }
+
+        public IEnumerable<string> GetLights(Options options)
+        {
+            if (options.Light > 0)
+                return new[] { options.Light.ToString() };
+
+            return null;
+        }
+
+        public Task<HueResults> SendCommand(LightCommand command, IEnumerable<string> lights = null) =>
+            _client.SendCommandAsync(command, lights);
     }
 }

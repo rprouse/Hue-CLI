@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Threading.Tasks;
 using CommandLine;
+using Q42.HueApi;
 using Console = Colorful.Console;
 
 namespace hue
@@ -41,7 +42,12 @@ namespace hue
                 if (options.Lights)
                 {
                     await controller.ListLights();
+                    return;
                 }
+
+                var command = controller.GetCommand(options);
+                var lights = controller.GetLights(options);
+                var result = await controller.SendCommand(command, lights);
             }
             finally
             {

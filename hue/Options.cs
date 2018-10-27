@@ -18,5 +18,17 @@ namespace hue
 
         [Option("lights", HelpText = "List lights")]
         public bool Lights { get; set; }
+
+        [Option('l', "light", HelpText = "The light to perform an action on. If unset or 0, all lights.")]
+        public uint Light { get; set; }
+
+        [Option("on", HelpText = "Turn lights on")]
+        public bool On { get; set; }
+
+        [Option("off", HelpText = "Turn lights off")]
+        public bool Off { get; set; }
+
+        [Option('a', "alert", HelpText = "Set an alert on the lights")]
+        public bool Alert { get; set; }
     }
 }
