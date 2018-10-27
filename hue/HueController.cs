@@ -113,8 +113,13 @@ namespace alteridem.hue.cli
                 command.On = false;
 
             if (options.Alert)
-            {
                 command.Alert = Alert.Multiple;
+
+            if (options.Brightness.HasValue)
+            {
+                double p = (options.Brightness.Value <= 100 ? options.Brightness.Value : 100d) / 100d;
+                byte b = (byte)(p * 255);
+                command.Brightness = b;
             }
 
             return command;

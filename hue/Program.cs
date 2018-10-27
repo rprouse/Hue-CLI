@@ -1,8 +1,6 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Threading.Tasks;
 using CommandLine;
-using Q42.HueApi;
 using Console = Colorful.Console;
 
 namespace alteridem.hue.cli
