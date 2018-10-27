@@ -20,3 +20,7 @@ Copyright 2018 Rob Prouse, All Rights Reserved
   --help              Display this help screen.
   --version           Display version information.
 ```
+
+## Building
+
+`dotnet publish -c Release -r win-x64`
