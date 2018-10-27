@@ -8,20 +8,17 @@ namespace alteridem.hue.cli
         [Option('a', "alert", HelpText = "Set an alert on the lights.")]
         public bool Alert { get; set; }
 
-        [Option("bridges", HelpText = "List bridges on the network.")]
-        public bool ListBridges { get; set; }
-
         [Option('b', "brightness", HelpText = "Set the brightness of a light, from 0 to 100 percent.")]
         public byte? Brightness { get; set; }
+
+        [Option('c', "color", HelpText = "Color as a HEX color in the format FF0000 or #FF0000, or a common color name like red or blue.")]
+        public string Color { get; set; }
 
         [Option('i', "ip", Default = null, HelpText = "IP Address of the Hue Bridge. Will default to the first bridge found.")]
         public string IP { get; set; }
 
         [Option('l', "light", HelpText = "The light to perform an action on. If unset or 0, all lights.")]
         public uint Light { get; set; }
-
-        [Option("lights", HelpText = "List lights.")]
-        public bool Lights { get; set; }
 
         [Option('f', "off", HelpText = "Turn lights off.")]
         public bool Off { get; set; }
@@ -34,5 +31,11 @@ namespace alteridem.hue.cli
 
         [Option('w', "wait", HelpText = "Wait before exiting.")]
         public bool Wait { get; set; }
+
+        [Option("bridges", HelpText = "List bridges on the network.")]
+        public bool ListBridges { get; set; }
+
+        [Option("lights", HelpText = "List lights.")]
+        public bool Lights { get; set; }
     }
 }

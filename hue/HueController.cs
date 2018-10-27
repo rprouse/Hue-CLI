@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Q42.HueApi;
+using Q42.HueApi.ColorConverters;
+using Q42.HueApi.ColorConverters.Original;
 using Q42.HueApi.Interfaces;
 using Q42.HueApi.Models.Bridge;
 using Q42.HueApi.Models.Groups;
@@ -15,6 +18,7 @@ namespace alteridem.hue.cli
     {
         string _key;
         ILocalHueClient _client;
+        readonly RGBColor _black = new RGBColor("000000");
 
         public async Task ListBridges()
         {
@@ -122,6 +126,13 @@ namespace alteridem.hue.cli
                 command.Brightness = b;
             }
 
+            if (options.Color != null)
+            {
+                RGBColor color = GetColor(options.Color);
+                if (color != _black)
+                    command.SetColor(color);
+            }
+
             return command;
         }
 
@@ -135,5 +146,17 @@ namespace alteridem.hue.cli
 
         public Task<HueResults> SendCommand(LightCommand command, IEnumerable<string> lights = null) =>
             _client.SendCommandAsync(command, lights);
+
+        RGBColor GetColor(string color)
+        {
+            // Is it an RGB Color?
+            var r = new Regex("^#?[0-9a-fA-F]{6}$", RegexOptions.CultureInvariant);
+            if (r.IsMatch(color))
+                return new RGBColor(color);
+
+            // Maybe it is a named color
+            Color c = Color.FromName(color);
+            return new RGBColor(c.R, c.G, c.B);
+        }
     }
 }
