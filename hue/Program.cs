@@ -5,7 +5,7 @@ using CommandLine;
 using Q42.HueApi;
 using Console = Colorful.Console;
 
-namespace hue
+namespace alteridem.hue.cli
 {
     class Program
     {

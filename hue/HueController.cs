@@ -9,7 +9,7 @@ using Q42.HueApi.Models.Bridge;
 using Q42.HueApi.Models.Groups;
 using Console = Colorful.Console;
 
-namespace hue
+namespace alteridem.hue.cli
 {
     class HueController
     {

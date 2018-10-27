@@ -1,9 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <LangVersion>7.3</LangVersion>
+    <PackageId>alteridem.hue.cli</PackageId>
+    <Authors>Rob Prouse</Authors>
+    <Company>Alteridem Consulting</Company>
+    <Product>Hue CLI</Product>
+    <Description>Control Philips Hue light from the command line</Description>
+    <Copyright>Copyright 2018 Rob Prouse, All Rights Reserved</Copyright>
+    <PackageLicenseUrl>https://github.com/rprouse/Hue-CLI/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/rprouse/Hue-CLI</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/rprouse/Hue-CLI</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RootNamespace>alteridem.hue.cli</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

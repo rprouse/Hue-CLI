@@ -1,6 +1,6 @@
 ﻿using CommandLine;
 
-namespace hue
+namespace alteridem.hue.cli
 {
     public class Options
     {
@@ -22,10 +22,10 @@ namespace hue
         [Option('l', "light", HelpText = "The light to perform an action on. If unset or 0, all lights.")]
         public uint Light { get; set; }
 
-        [Option("on", HelpText = "Turn lights on")]
+        [Option('o', "on", HelpText = "Turn lights on")]
         public bool On { get; set; }
 
-        [Option("off", HelpText = "Turn lights off")]
+        [Option('f', "off", HelpText = "Turn lights off")]
         public bool Off { get; set; }
 
         [Option('a', "alert", HelpText = "Set an alert on the lights")]

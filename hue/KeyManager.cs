@@ -3,7 +3,7 @@ using System.Drawing;
 using System.IO;
 using Console = Colorful.Console;
 
-namespace hue
+namespace alteridem.hue.cli
 {
     class KeyManager
     {
